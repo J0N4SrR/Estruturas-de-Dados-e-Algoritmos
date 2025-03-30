@@ -1,47 +1,26 @@
 package estruturas;
 
-import java.util.Arrays;
-
-public class Vetor {
-    private String[] elementos;
+public class VetorObject {
+    private Object[] elementos;
     private int tamanho;
 
-    public Vetor(int capacidade){
-        this.elementos = new String[capacidade];
+    public VetorObject(int capacidade){
+        this.elementos = new Object[capacidade];
         this.tamanho = 0;
 
     }
 
     private void aumentaCapacidade(){
         if(this.tamanho == this.elementos.length){
-           String[] elementosNovo = new String[this.elementos.length * 2];
+            Object[] elementosNovo = new Object[this.elementos.length * 2];
            for(int i = 0; i < this.tamanho; i++){
                elementosNovo[i] = this.elementos[i];
            } this.elementos = elementosNovo;
         }
     }
 
-    //Primeiro metodo de adicionar elementos - Não é eficiente,  pois vai iterar tds oselementos do vetor ate encontrar uma posição nula.
-    //Se elementos forem removidos e houver null no meio, esse metodo pode adicionar elementos de forma desordenada.
-        /*for(int i = 0; i < this.elementos.length; i++){
-            if(this.elementos[i] == null){
-                this.elementos[i] = e;
-                break;
-            }
-        }
-    }*/
-    //Segundo metodo de adicionar elementos -  adiciona diretamente na posição tamanho, sem percorrer o vetor.
-    public void add2(String e) throws Exception{
-        if(this.tamanho < this.elementos.length) {
-            this.elementos[this.tamanho] = e;
-            this.tamanho++;
-        } else {
-            throw new Exception("O Vetor já está cheio");
-        }
-    }
 
-    // Terceiro metodo de adicionar elementos - Retorna true ou false em vez de lançar exceção.
-    public boolean add3(String e){
+    public boolean adiciona(Object e){
         aumentaCapacidade();
         if(this.tamanho < this.elementos.length) {
             this.elementos[this.tamanho] = e;
@@ -51,7 +30,7 @@ public class Vetor {
         return false;
     }
     // Metodo para adicionar elementos em qualquer posição
-    public boolean add3(String elemento, int posicao){
+    public boolean adiciona(Object elemento, int posicao){
         aumentaCapacidade();
         if(!(posicao >= 0 && posicao < tamanho)){
             throw new IllegalArgumentException("Posição inválida");
@@ -82,17 +61,17 @@ public class Vetor {
         return this.tamanho;
     }
 
-    public String busca(int posicao){
+    public Object busca(int posicao){
         if(!(posicao >= 0 && posicao < tamanho)){
             throw new IllegalArgumentException("Posição inválida");
         }
         return this.elementos[posicao];
     }
 
-    public int busca(String elemento){
+    public int busca(Object elemento){
         //algoritimo de busca sequencial
         for(int i = 0; i < this.tamanho; i++){
-            if(this.elementos[i].equalsIgnoreCase(elemento)){
+            if(this.elementos[i].equals(elemento)){
                 return i;
             }
         }

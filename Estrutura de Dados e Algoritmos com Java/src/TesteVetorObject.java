@@ -1,23 +1,16 @@
-import estruturas.Vetor;
+import estruturas.VetorObject;
 
-public class Main {
+public class TesteVetorObject {
     public static void main(String[] args) throws Exception {
 
-        Vetor v2 = new Vetor(3);
-        Vetor v3 = new Vetor(4);
+        VetorObject v3 = new VetorObject(4);
 
-        v2.add2("a");
-        v2.add2("b");
-        v2.add2("c");
+        v3.adiciona("A");
+        v3.adiciona("B");
+        v3.adiciona("C");
 
-        System.out.println("Vetor V2: " + v2);
-
-        v3.add2("A");
-        v3.add2("B");
-        v3.add2("C");
-
-        v3.add3("X", 1);
         System.out.println("Vetor inicial: " + v3);
+        v3.adiciona("X", 1);
         System.out.println("Após inserir X na posição 1: " + v3);
 
         v3.remove(2);
