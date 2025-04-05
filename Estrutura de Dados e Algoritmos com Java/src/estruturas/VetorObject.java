@@ -84,7 +84,7 @@ public class VetorObject {
     public String toString() {
         StringBuilder s = new StringBuilder();
         s.append("[");
-        for (int i = 0; i < this.tamanho; i++) {
+        for (int i = 0; i <= this.tamanho; i++) {
             s.append(this.elementos[i]);
             if (i < this.tamanho - 1) s.append(", ");
         }
