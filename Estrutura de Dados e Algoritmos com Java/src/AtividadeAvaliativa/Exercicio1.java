@@ -1,4 +1,4 @@
-package exercicios;
+package AtividadeAvaliativa;
 
 public class Exercicio1 {
     public int[] pilhas;

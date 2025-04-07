@@ -1,4 +1,4 @@
-package exercicios;
+package AtividadeAvaliativa;
 import java.util.Scanner;
 
 public class MainExercicio01 {

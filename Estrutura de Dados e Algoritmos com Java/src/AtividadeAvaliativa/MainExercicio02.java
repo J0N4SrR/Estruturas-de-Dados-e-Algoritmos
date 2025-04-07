@@ -1,4 +1,4 @@
-package exercicios;
+package AtividadeAvaliativa;
 import estruturas.Fila;
 
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-package exercicios;
+package AtividadeAvaliativa;
 
 public class Exercicio2 {
         private String[] elementos;
