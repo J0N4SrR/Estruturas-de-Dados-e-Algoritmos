@@ -3,7 +3,7 @@ import estruturas.VetorObject;
 public class TesteVetorObject {
     public static void main(String[] args) throws Exception {
 
-        VetorObject v3 = new VetorObject(4);
+        VetorObject v3 = new VetorObject(5);
 
         v3.adiciona("A");
         v3.adiciona("B");
